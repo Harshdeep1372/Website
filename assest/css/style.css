@@ -1,7 +1,13 @@
 @font-face {
     font-family: Poppins;
-    src: url(../Fonts/Poppins-Medium.ttf);
+    src: url("../Fonts/Poppins-Medium.ttf");
 }
+
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 * {
     margin: 0;
@@ -12,6 +18,10 @@
 .container {
     width: 100%;
     margin: 0 auto;
+}
+
+[class *=col_] {
+    width: 100%;
 }
 
 section {
@@ -70,8 +80,9 @@ a {
     position: absolute;
 }
 
+
 .mx {
-    margin: 50px 0;
+    margin: 0px 0 10px 26px;
 }
 
 .blue {
@@ -83,15 +94,90 @@ header {
     padding-top: 20px;
 }
 
-nav ul li {
+.list ul li {
     display: inline-block;
 }
 
-nav ul li a {
+/* nav ul li {
+    display: inline-block;
+} */
+
+.list ul li a {
     padding: 0 20px;
     color: black;
     font-size: 20px;
 }
+
+/* nav ul li a {
+    padding: 0 20px;
+    color: black;
+    font-size: 20px;
+} */
+
+/* manu */
+.icon i {
+    /* color: #fff; */
+    /* color: #4685E2; */
+    margin: 12px;
+}
+
+.margin_left {
+    margin-left: auto;
+}
+
+.list {
+    display: none;
+}
+
+.bar {
+    display: block;
+}
+
+.bar i {
+    color: #4685E2;
+    font-size: 29px;
+    cursor: pointer;
+
+}
+
+/* manu end */
+/* manu for  mobile */
+.list {
+    position: fixed;
+    display: block;
+    top: 100px;
+    right: -100%;
+    width: 100%;
+    /* padding-block: 3rem 2rem; */
+    transition: all 0.40s ease-in-out;
+    z-index: 999;
+    /* background-color: #fff; */
+    background-color: white;
+}
+
+.list.active {
+    opacity: 1;
+    right: 0;
+    width: 100%;
+    overflow: scroll;
+    height: 100vh;
+}
+
+.list ul li {
+    display: block;
+    width: 90%;
+    list-style: none;
+    margin: 0 auto;
+    padding: 19px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.list ul li a {
+    color: #000;
+}
+
+/* end */
 
 .btn-1 {
     /* width: 100%; */
@@ -121,7 +207,7 @@ nav ul li a {
 
 .sec_1 {
     padding-top: 20px;
-    background-image: url(../img/main\ bg.png);
+    background-image: url("../img/main\ bg.png");
     background-size: 55%;
     background-repeat: no-repeat;
     background-position: 49% -31%;
@@ -176,21 +262,26 @@ nav ul li a {
 
 .quote {
     line-height: 65px;
+    margin-top: 198px;
 }
 
 .quote h3 {
-    font-size: 50px;
+    font-size: 40px;
 }
 
+
 .quote h2 {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
 }
+
+
 
 .zoom {
     border-radius: 10px;
     overflow: hidden;
     width: 90%;
+    margin-left: 10px;
 }
 
 .zoom>img {
@@ -310,11 +401,9 @@ nav ul li a {
     font-size: 15px;
     border: none;
     outline: none;
+    margin-bottom: 20px;
 }
 
-.text_4 {
-    margin-bottom: 30px;
-}
 
 .text_4 h3 {
     font-size: 24px;
@@ -335,6 +424,7 @@ nav ul li a {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.574);
+    margin-left: 20px;
 }
 
 .cr-btn button {
@@ -369,7 +459,9 @@ nav ul li a {
     backdrop-filter: blur(20px);
     padding: 20px;
     border-radius: 20px;
+    margin: 10px;
 }
+
 
 .text-5 h2 {
     margin: 20px 0;
@@ -474,16 +566,14 @@ nav ul li a {
 }
 
 .sec-6 .row h1 {
-    font-size: 60px;
     width: 25%;
-    line-height: 70px;
 }
 
+
 .sec_6_p {
-    width: 40%;
-    margin: 60px 0 30px 0px;
-    padding-top: 63px;
+    margin-bottom: 18px;
 }
+
 
 .image img {
     border-radius: 10px;
@@ -512,8 +602,10 @@ nav ul li a {
     color: white;
     text-transform: capitalize;
     font-size: 40px;
-    line-height: 70px;
-    margin: 90px 40px;
+}
+
+.sec7-text1 h2 {
+    font-size: 35px;
 }
 
 .sec7-text1 .right {
@@ -532,10 +624,11 @@ nav ul li a {
 }
 
 .student-details {
-    margin: 90px 0 0 0;
+    margin: 26px 0 0 0;
     align-items: center;
     line-height: 16px;
 }
+
 
 .student-details .photo {
     width: 20%;
@@ -548,6 +641,7 @@ nav ul li a {
 
 .student-details .name p {
     text-transform: capitalize;
+    margin-top: 10px;
 }
 
 /* footer   */
@@ -610,15 +704,19 @@ footer a {
 }
 
 
-@media (min-width: 576px) {}
 
+@media (min-width: 576px) {
+    .container {
+        width: 540px;
+    }
+}
 
 @media (min-width: 768px) {
     .container {
-        width: 1300px;
-        margin: 0 auto;
+        width: 740px;
     }
 
+    /* col start */
     .col_100 {
         width: 98%;
     }
@@ -654,12 +752,113 @@ footer a {
     .col_20 {
         width: 18%;
     }
+
+    /* col end */
+    .student-details {
+
+        margin: 90px 0 0 0;
+    }
+
+    .quote {
+        line-height: 65px;
+    }
+
+    .quote h2 {
+        font-size: 60px;
+        font-weight: bold;
+    }
+
+    .quote h3 {
+        font-size: 50px;
+    }
+
+    .mx {
+        margin: 50px 0;
+    }
+
+    .text_4 {
+        margin-bottom: 30px;
+    }
+
+    .sec-6 .row h1 {
+        font-size: 60px;
+        line-height: 70px;
+    }
+
+    .sec_6_p {
+        width: 62%;
+        font-size: 30px;
+        margin: 60px 0 30px 0px;
+        padding-top: 80px;
+    }
+
+
+    .sec7-text1 {
+        line-height: 70px;
+        margin: 90px 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 960px;
+    }
+
+    .list {
+        display: block;
+        position: static;
+        background-color: transparent;
+        transition: none;
+        width: 48%;
+    }
+
+
+    .list ul li {
+        display: inline-block;
+        width: 20%;
+        margin: 0 auto;
+        /* padding: 0 20px; */
+        text-align: center;
+    }
+
+    .list ul li a {
+        color: black;
+    }
+
+
+    .bar {
+        display: none;
+    }
+
+
+    .sec7-text1 h2 {
+        font-size: 70px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1140px;
+    }
+
+
+}
+
+@media (min-width: 1400px) {
+    .container {
+        width: 1320px;
+    }
 }
 
 
-@media (min-width: 992px) {}
 
 
-@media (min-width: 1200px) {}
 
-@media (min-width: 1400px) {}
+/* @media (min-width: 768px) {
+    .container {
+        width: 1300px;
+        margin: 0 auto;
+    }
+
+    
+} */

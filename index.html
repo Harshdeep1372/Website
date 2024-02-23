@@ -19,16 +19,22 @@
                 <div class="logo">
                     <h1>University</h1>
                 </div>
-                <nav>
+                <div class="list">
+
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Courses</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Blog</a></li>
                     </ul>
-                </nav>
+
+                </div>
+
                 <div class="button">
                     <button class="btn-1">Contact Us</button>
+                </div>
+                <div class="bar">
+                    <i class="fa-solid fa-bars"></i>
                 </div>
             </div>
         </div>
@@ -504,7 +510,7 @@
 
             <div class="faculty">
                 <div class="row jcs">
-                    <h3>Faculty</h3>
+                    <h3 style="font-size: 40px;">Faculty</h3>
                     <h2>OUR SKILLED FACULTY HELPS STUDENTS IN MANY DISCIPLINES</h2>
                 </div>
 
@@ -873,6 +879,44 @@
             $(".filter-btn").removeClass("active");
             $(this).addClass("active");
         });
+
+
+
+
+        // manu code start
+        const bar = document.querySelector(".bar");
+        const navbar = document.querySelector('.list');
+        const navbarli = document.querySelectorAll(".list li");
+
+        bar.addEventListener("click", () => {
+            bar.classList.toggle("active");
+            navbar.classList.toggle('active');
+        });
+
+        let btn = document.querySelector(".bar");
+        let icon = btn.querySelector(".fa-bars");
+        btn.onclick = function () {
+            if (icon.classList.contains("fa-bars")) {
+                icon.classList.replace("fa-bars", "fa-times");
+            } else {
+                icon.classList.replace("fa-times", "fa-bars");
+            }
+        }
+        // hamburger button end
+
+
+        window.addEventListener('scroll', function () {
+            // console.log("test");
+            let TopScrolled = window.pageYOffset || document.documentElement.scrollTop;
+            // console.log(TopScrolled);
+            if (TopScrolled > 1) {
+                document.querySelector(".list").classList.remove("active");
+                icon.classList.replace("fa-times", "fa-bars");
+            } else {
+                // document.getElementById("main-header").classList.add("fixedmenu");
+            }
+        });
+        // manu code end
     </script>
 </body>
 
